@@ -20,6 +20,44 @@
      <h1>Paper Link</h1>
      <a href="https://cs.fit.edu/~pkc/theses/torres20.pdf">A Machine Learning Approach to Forecasting SEP Events with Solar Activities</a>
      <h1>Summary</h1>
-     <p></p>
+     <p>
+          Solar energetic particles (SEPs) can cause severe damage to people and to equipment. Two tasks were accomplished: predicting their occurence
+          using a combination of observed CME properties and derived features and forecasting their intensity using electron and proton flux time
+          series data. When predicting intensity, the data was separated into ranges and used to train separate models with the correct model 
+          either manually selected or predicted using another model.
+     </p>
+     <p>
+          One contribution was deriving features from the initial set of features when prediciting the occurence of SEP events. Another was presenting
+          a method for calculating feature importance within the feed-forward network trained when doing the same prediction. In the second problem of
+          predicing intensity, the contribution was separating data into intensity ranges and using that to train multiple models to address the imbalance
+          between SEP events from the background noise.
+     </p>
+     <p>
+          Features for the predicting SEP occurence included linear speed, width, acceleration, 2nd order speed initial, 2nd order speed final, 2nd order speed 
+          at 20 solar radii, Central position angle (CPA), and Measurement position angle (MPA). Derived features included the number of CMEs in the past month,
+          the number of CMEs in the past 9 hours, the maximum speed of all CMEs in the past day, and the number of CMEs in the past 9 hours with a speed greater
+          than 1000 km/s. The outside features used included V * log(V), where V is the linear speed; whether or not the CME is a Halo (CPA = 360 degrees), and
+          a formula to replace V^V^2. Futher added and derived features from other sources included sunspot number at the time of a CME, area of visualization of
+          a Type II burst occuring during the CME, and the formula for predicting peak 14- to 24-MeV proton intensity.
+     </p>
+     <p>
+          The NN for predicting SEP occurence was a multilayer perceptron NN with a single output sigmoid unit. Feature importance was calculated using matrix
+          multiplication with matrices formed from the weights. Feature importance is quantfied then in relation to other features. Missing data was replaced 
+          using oversampling which duplicates the minority cases of a rare SEP event occuring until it's a better ratio with the majority cases of no SEP event
+          occuring. Evaluation was done through a confusion matrix (True Negative, False Negative, False Positive, True Positive). From there, recall = TP/(TP + FN),
+          FPR = FP/(FP + TN), precision = TP/(TP + FP), and PFA = FP/(TP+FP) can be calculated as can TSS = TP/(TP+FN) - FP/(FP+TN) and F1 = (2*precision*recall) / (precision + recall).
+          TSS turned out to not be a very useful measurement but F1 was much more valuable. In addition, adding more features lead to higher F12 score. The threshold
+          for the output sigmoid unit was varied and the best threshold was 0.962. All features were of somewhat importance when using their formula for calculating
+          feature importance with none magnitudes better than the others. 
+     </p>
+     <p>
+          Predicting intensity does not use CMEs but predicts a continuous value based on continuous past values. The prediction is made 30 minutes or 1 hour from 
+          the current time. Electron and proton intensities are used as features with additional phases added to the input and later x-ray related features added in.
+          A baseline is established using a single NN on the whole dataset. The imbalance between background noise and SEP events was resolved using multiple models.
+          One multiple model system was based on models based on intensity with a high, medium, and low intensity model selected based on thresholds. The other was
+          based on if the data was classified as rising, falling, or background. The evaluation included mean aboluste error, lag between onset and peak, lag 
+          between onset and threshold, and time difference to reach ln(10) vs predictions reaching ln(10), the threshold for SEP classification. Data was split
+          into training and test sets. 
+     </p>
 </body>
 </html>
