@@ -37,7 +37,7 @@
      a new factor of HSS, Heidke Skill Score, to determine if the classifier was better than random. In addition, LPR, lowest point average rank, and HNR, highest negative average rank, were computed.
      Sigmoid units were used in all units. There were only 3 hidden units instead of 30 like Torres. Momentum was set to 0.9 and L2 weight regularization to 0.0075. The model was trained over 400 epochs for
      the first stage and then again for the second stage with frozen weights between input to hidden and retrained weights from hidden to output.</p>
-     <p>TSS, HSS, and F1 improve with more feaatures. Although cRT and cRT + AE both increase TSS, HSS, and F1, they also vary in rank improvement over original single-stage model. The output threshold was
+     <p>TSS, HSS, and F1 improve with more features. Although cRT and cRT + AE both increase TSS, HSS, and F1, they also vary in rank improvement over original single-stage model. The output threshold was
      varied with the best results using cRT + AE for chronological and less clear results for the random partioning. Large and fast CMEs are predicted better in the baseline verison. Feature importance was 
      calcuated using LIME and identify 5 main groups Speed, Location, Size, CME History, and Others for the input parameters. The speed and location are ranked highest. False negatives occured close to
      a lat/long of 0 and prolonged elevated proton flux in random partitioning. In chronological partitioning, false positives occur with high speed and large half width. False negatives are found when

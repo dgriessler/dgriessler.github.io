@@ -22,6 +22,28 @@
      <h1>Paper Link</h1>
      <a href="https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1029/2018SW002032">Prediction of Solar Energetic Particle Event Peak Proton Intensity Using a Simple Algorithm Based on CME Speed and Direction and Observations of Associated Solar Phenomena</a>
      <h1>Summary</h1>
-     <p></p>
+     <p>Assesses if a formula from Richardson et al. relating the peak intensity in a SEP event at 1 AU to the solar event location and speed of the CME can predict SEP intensity at any location at that distance. 334 CMEs are used from the DONKI database from
+     October 2011 to July 2012 to predict the proton intensity at Earth and two Solar Terrestraial RElations Observatory spacecraft using CME speed and direction using the formula. There are a lot of false positives. They are reduced using type II and type
+     III radio emissions along with CMEs and by selecting faster, wider CMEs. SEP intensities are predicted from ~1,100 CMEs observed during 1997-2006 by the Solar and Heliospheric Observatory Large Angle and Spectrometric Coronagraph. Calculated skill scores
+     assess the SEP predictions aspects. The formula is concluded to be a simple empirial SEP intensity prediction tool.</p>
+     <p>
+          The formula is derived by Richardson et al. from 25 three-spacecraft SEP events near the Eart hand the Solar Terrestrial Relations Observatory (STEREO) A and BN spacecraft near 1 AU from the sun whose peak 14- to 24-MeV proton intensities were fitted to
+          Gaussians in connection angle. A correlation was discovered betwewen the Gaussian peak intensities and the CMEs speed yielding a formula based on peak 14- to 24-MeV proton intensity from 1 AU distance with a connection angle and associated CME of speed V. A
+          large amount of CMEs are not related to SEP events, so many false positives are predicted since CME characteristics are included with the formula when forecasting SEP intensity near 1 AU. The equation is I(phi)(MeV s*cm^2 * sr)^(-1) ~=~ 0.013 * e^(0.0036V - phi^2/2*sigma^2))
+          where sigma = 43 degrees. Phi was the angle between the CME angle and the angle of the magnetic field of the Earth. This is a Gaussian equation.
+     </p>
+     <p>
+          Predicted and observed 14- to 24- MeV proton Intensities plotted versus Space Weather Database Of Notifications, Knowledge, Information coronal mass ejection direction (longitude) shows a Gaussian like curve centered at around 43 degrees for the predictions as expected.
+          The SEP intensity is overpredicted for small, mostly western events and intensities fail to meet the threshold of 10^(-4) for CMEs for longitudes < -90 degrees. By moving the detection threshold, the quadrants of hits, false alarms, corarect rejections, and misses is
+          adjusted. The goal is to minimize false alarms. Low intensity CME was higher predicted and higher intensity was under predicted (Figure 4). By isolating CMEs with speeds more than 1000 km/s the number of false alarms drops but some SEP events are removed.
+          By considering CMEs with larger widths, the number of false alarms drops but increase the number of SEP events removed. Figure 7 Speed*Width is volume per second. Including both width and speed into volume shows reduction in false alarms but again some SEP events are 
+          removed. Considering type II and type III radio waves also reduces false alarms at the expense of observed by not predicted SEP events especially when Type II radio waves are required and the same applies for Type III required radio waves.
+     </p>
+     <p>
+          The formula was run against an independent data set. They isolated using a minimum width of 50 degrees and minimum speed of 300 km/s from 11,500 to 3,156 CMEs. Similar patterns are seen when requiring Type II radio waves. Skill scores were applied including plots for
+          FalseAlarms/(FalseAlarms + Hits) versus SEP intensity showing very good results when including radio waves, FalseAlarms/(Correctrejections + Falsealarms) showing cme speed * width performs best, (Hits + FalseAlarms)/(Hits + Misses) showing requiring type II
+          or bright type III is a near perfect score, Hits/(Hits + Misses) showing best results with no filtering, (Probability of detection) - (Probability of false detection) shwoing requring type II or type III performs best, and (Hits + CorrectRejections)/Total showing
+          type II or bright type III are required or that the CME is fast/wide for the best results.
+     </p>
 </body>
 </html>
