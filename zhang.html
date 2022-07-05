@@ -30,7 +30,14 @@
      <a href="https://arxiv.org/pdf/2103.16370.pdf">Distribution Alignment: A Unified Framework for Long-tail Visual Recognition</a>
      <h1>Summary</h1>
      <p>
-
+          This paper analyzes the performance bottleneck in the classic two-stage learning strategy. They find that the representation
+          is learned well from the unbalanced data, but that the second stage can be improved due to the biased decision boundary. They outline
+          two stages: joint learning stage, the normal NN training on the inbalanced dataset, and distribution calibration stage, freeze the 
+          representation and calibrate the class scores using an adaptive calibration function and a distruction alignment strategy with
+          generalized reweighting. The Adaptive Calibration Function is outlined in detail to get to the class score, the probability a class
+          is predicted given some input. The Alignment with Generalized Re-weighting uses the KL-divergence between these class scores and the
+          expected ones. However, for the KL-divergence to be used it has to be based on probability distribution which should sum to 1. Their
+          outline of the weighted empirical distribution does not sum to 1 making their method suspect. Nevertheless, they achieve good results.
      </p>
 </body>
 </html>

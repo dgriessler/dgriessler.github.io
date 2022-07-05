@@ -27,7 +27,20 @@
      <a href="https://arxiv.org/pdf/1910.09217.pdf">Decoupling Representation and Classifier for Long-Tailed Recognition</a>
      <h1>Summary</h1>
      <p>
-
+          This paper explores separating the representation and the classifier of the NN into two parts. They first train models
+          using different sampling strategies. Next, they explore three strategies for learning the classifier. 1) Use class-based
+          resampling; 2) use nearest class mean i.e. the weights become a prototype representation of a class; 3) Normalize the 
+          classifier weights to balance out classifications for the long tailed with the more popular class(es). 
+     </p>
+     <p>
+          Results include: instance-based sampling to learn the representation works best, retrain the classifier with class-balanced
+          sampling or weight normalization with "temperature" hyperparameter, and they achieve significantly higher accuracy on some
+          popular long-tailed datasets.
+     </p>
+     <p>
+          Includes a good overview of instance-based sampling, class-based sampling, square-root sampling, and progressively-balanced sampling. Also
+          a good overview of Classifier Re-training (cRT), Nearest Class Mean classifier (NCM), tau-normalized classifier, and learnable weight scaling (LWS).
+          
      </p>
 </body>
 </html>

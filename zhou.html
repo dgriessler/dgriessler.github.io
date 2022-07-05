@@ -27,7 +27,12 @@
      <a href="https://arxiv.org/pdf/1912.02413.pdf">BBN: Bilateral-Branch Network with Cumulative Learning for Long-Tailed Visual Recognition</a>
      <h1>Summary</h1>
      <p>
-
+          This paper introduces an approach of learning the representation and classifer together based on the same weights but use two different branches
+          to supply examples. The conventional learning branch is the typical long-tail distribution with uniform sampling. The re-balancing branch is a
+          reversed sampler. These are combined together in the cumulative learning block where some hyper parameter alpha is varied such that in the beginning 
+          the examples from the conventional branch are used and as epochs go by they are used less and less as the re-balancing branch examples are used. Their
+          cumulative learning strategy is outlined in more detail but alpha depends on the epoch number and the maximum epoch number to be calculated. Their results
+          show great success. 
      </p>
 </body>
 </html>
