@@ -29,7 +29,30 @@
      <a href="https://arxiv.org/pdf/2103.14267.pdf">Contrastive Learning based Hybrid Networks for Long-Tailed Image Classification</a>
      <h1>Summary</h1>
      <p>
+          This paper focuses on learning a NN based on an imbalanced dataset. Their approach is a hybrid network structure. The two sides
+          of feature learning and classifier learning are done together. The feature learning side is trained on the regular imbalanced dataset.
+          The classifer learning side is trained on the class-balanced version of that imbalanced dataset. The two sides share the same backbone
+          network which produces a representation r.
 
+          The feature learning side then takes r and uses a projection head to map that image representation into a vector representation z. This
+          projection head is a nonline multiple-layer perceptron with one hidden layer. Then, the l2 normalization is applied to z. Then, a supervised
+          contrastive loss L_SCL is applied to the normalized representation. 
+
+          The classifer learning side then takes r and applies a single linear layer to predict class-wise logis s. These are used to compute the 
+          cross-entropy loss.
+
+          The combined loss function uses an alpha term 0 <= alpha <= 1 such that a portion of the loss comes from each side. Alpha is initialized to 0.5
+          and then changed by parabolic decay w.r.t. the  epoch number as seen in prior papers.
+
+          The L_SCL formulation sets up z to be the anchor of a class and aligns the anchors whose examples share the same class while dealigning
+          to the anchors whose examples share a different class.
+
+          They also propose a prototypical supervised contrastive (PSC) loss. The goal is to learning a prototype of each class and force views of each
+          sample to be close to the prototype of their class and far waway from the prototypes of otehr classes. They also outline an extension to
+          multiple prototype supervised constrastive (MPSC) loss. 
+
+          The experimentation included abalative studies which confirmed their advantage over two staged learning and showed top results on two 
+          typical datasets across the imbalance ratio of 100, 50, and 10.
      </p>
 </body>
 </html>
