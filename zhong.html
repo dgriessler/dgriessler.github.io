@@ -26,7 +26,11 @@
      <a href="https://arxiv.org/pdf/2104.00466.pdf">Improving Calibration for Long-Tailed Recognition</a>
      <h1>Summary</h1>
      <p>
-
+          This paper references mixup which is detailed in the paper <a href="https://arxiv.org/abs/1710.09412">mixup: Beyond Empirical Risk Minimization</a>.
+          The idea is to combine two examples together using a delta term ~ Beta(alpha, alpha). Their approach introduces the idea of label-aware smoothing
+          to solve over-confidence from the normal method with the goal of penalizing classes with larger instance numbers. They propose several ways of
+          computing the function based on the instance number of a class such concave, linear, and convex forms. They find their method performs better than
+          CB-CE in terms of test accuracy. They vary and find optimal values for the two hyperparameters e1 and eK used in the function for label aware smoothing. 
      </p>
 </body>
 </html>

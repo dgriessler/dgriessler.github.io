@@ -24,7 +24,14 @@
      <a href="https://ieeexplore-ieee-org.portal.lib.fit.edu/stamp/stamp.jsp?tp=&arnumber=8631400">SMOTEBoost for Regression: Improving the Prediction of Extreme Values</a>
      <h1>Summary</h1>
      <p>
-
+          The SMOTE part is an approach for generating synthetic examples by interpolating existing ones. Interpolation combines two examples by imagining a function that
+          connects the two examples together with the simpliest being linear. Then, if by finding another point on the path you have another valid example. The challenge
+          is using the correct function that the examples follow which is nontrivial. The Boost part is a method for converting a weak learning algorithm into one that achieves
+          high accuracy. All examples start with an equal weight. then, new models are learned using bootstrap data samples. Prediction errors of the models at each iteration
+          are used to update case selection weights and bias towards larger error items. The set of models together are called an ensemble and are weighted in proportion to their
+          performance on the training data. They outline the SMOTEBoot.RT (based on AdaBootsat.RT) algorithm and the modifications for their different algorithm types. They use
+          boxplots for their analysis since they have multiple models in their ensemble. The SMOTEBoost+ performs best across the 30 datasets in terms of rank. There is a tradeoff
+          in accuracy on average decreases with the increase of accuracy on the minority class. 
      </p>
 </body>
 </html>
