@@ -25,7 +25,21 @@
      <a href="https://arxiv.org/pdf/2102.09554.pdf">Delving into Deep Imbalanced Regression</a>
      <h1>Summary</h1>
      <p>
-               
+          This paper is all about smoothing. The paper forcuses on imbalanced distributions with continuous output. They propose smoothing by
+          labels and smoothing by features to improve performance.
+     </p>
+     <p>
+          Label distribution smoothing (LDS) uses a kernel function to smooth out the label distribution so that the error distribution and label density
+          distribution are higher correlated. This allows then to apply techniques for addressing class imbalance problems. It itself does NOT fix class imbalance.
+     </p>
+     <p>
+          Feature Distribution Smoothing (FDS) is motivated by the assumption that the output is continuous so the feature space should also be continuous. Thus, by collecting
+          the feature mean and variance and applying a smoothing kernel function, a new smoothed representation can be generated. This is integrated into NN by "inserting a 
+          feature calibration layer after the final feature map."
+     </p>
+     <p>
+          The evaluation metrics show LDS and FDS having almost constant improvement across different datasets and methods. It can also be noted the RRT method is used
+          in this paper, and it shows a marked improvement over the other methods for balancing class data.
      </p>
 </body>
 </html>
