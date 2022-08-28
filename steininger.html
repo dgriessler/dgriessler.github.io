@@ -27,7 +27,27 @@
      </a>
      <h1>Summary</h1>
      <p>
-          
+          Proposes a sample weighting approach called DenseWeight which they include into a cost-sensitive learning appraoch called DenseLoss. These are meant to be used with imbalanced regression datasets.
+          DenseWeight uses the distribution of the training example to weight rare training data higher in the loss function than the more common training data.
+          In a nutshell, "they compute a kernel density estimation (KDE) that approximates the target value distribution, calculate a weighting function from the resulting probability density function, and 
+          weight the loss for each data point in the training procedure."
+     </p>
+     <p>
+          DenseWeight is based on 5 properties:
+     </p>
+     <ol>
+          <li>Samples with common values are weighted less than rarer samples</li>
+          <li>The hyperparameter alpha when set to 0 has no effect and as alpha increases the weighting is applied more and more.</li>
+          <li>No weights are negative</li>
+          <li>No weight is 0</li>
+          <li>The mean weight over all points is 1.</li>
+     </ol>
+     <p>
+          DenseLoss simply multiplies the weight of a sample provided by DenseWeight by the meter M used in the loss function. Their results mainly show a reduction in error on rarer samples with only a slight
+          increase in error on the common samples.
+     </p>
+     <p>
+          Results show great results on pareto which matches the distribution of our dataset.
      </p>
 </body>
 </html>
