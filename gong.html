@@ -23,7 +23,27 @@
      <a href="https://arxiv.org/pdf/2205.15236.pdf">RankSim: Ranking Similarity Regularization for Deep Imbalanced Regression</a>
      <h1>Summary</h1>
      <p>
-
+          The problem space focuses on imbalanced data sets with a regression target value. Their idea is that the sorted list of
+          neighbors in label space should match the sorted list of neighbors in the feature space for a given data sample.
+     </p>
+     <p>
+          Their method starts with a calculation of rank for a given list of numbers. This basic definition they later amend because
+          it forms a step wise function which is not differentiable. This amendment still calculates the rank as expected but uses 
+          some additional papers to compute the gradient. A simularity matrix is then created using a simularity function over the 
+          lables to form the label simularity matrix and over the representations to form the representation simularity matrix. 
+          The loss then becomes the sum over a batch size of a loss function applied to the ranking of both simularity matrices.
+     </p>
+     <p>
+          It's worth noting that their method does not deal with the problem that the dataset is imbalanced. Their method therefore
+          had to be applied to existing methods for dealing with imbalanced data including Focal-R, RRT, and SQINV. In addition, they
+          included LDS and FDS as mentioned in <a href="./yang.html">Delving into Deep Imbalanced Regression</a>. Their method shows
+          improvement across MAE and GM and across the different methods attempted.
+     </p>
+     <p>
+          They also found that Mean Square Error was their best loss function in an abalation study and that cosine simularity was their
+          best simularity function in an abalation study. They also did an abalation study where they test sampling such that each
+          label is balanced in M (occurs at most once) versus without sampling. Unsurprisingly, their method worked best when the M batch
+          included balanced sampling. 
      </p>
 </body>
 </html>
