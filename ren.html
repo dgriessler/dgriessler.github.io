@@ -26,7 +26,14 @@
      <a href="https://arxiv.org/pdf/2203.16427.pdf">Balanced MSE for Imbalanced Visual Regression</a>
      <h1>Summary</h1>
      <p>
-
+          In this paper, they introduce Balanced Mean Squared Error (Balanced MSE) over the widely used Mean Squared Error (MSE) for imbalanced regression.
+          MSE is found to perform worse on the minority class because of the imbalanced dataset. They show through some math that regressors trained with MSE
+          underestimate on the minority class. 
+     </p>
+     <p>
+          Balanced MSE has two parts: the first is standard MSE and the second is a balancing term. Calculating this term can be difficult. They offer one way through
+          expressing p_train(y) as a Gaussian Mixture Model (GMM). This constrains p_train to be a Gaussian model. They also offer an approach by using Monte Carlo Method
+          to approximate p_train(y). A form called Batch-based Monte-Carlo (BMC) doesn't need any prior knowledge about p_train(y).
      </p>
 </body>
 </html>

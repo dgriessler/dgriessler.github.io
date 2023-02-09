@@ -42,13 +42,13 @@
           cross-entropy loss.
 
           The combined loss function uses an alpha term 0 <= alpha <= 1 such that a portion of the loss comes from each side. Alpha is initialized to 0.5
-          and then changed by parabolic decay w.r.t. the  epoch number as seen in prior papers.
+          and then changed by parabolic decay w.r.t. the epoch number as seen in prior papers.
 
           The L_SCL formulation sets up z to be the anchor of a class and aligns the anchors whose examples share the same class while dealigning
           to the anchors whose examples share a different class.
 
           They also propose a prototypical supervised contrastive (PSC) loss. The goal is to learning a prototype of each class and force views of each
-          sample to be close to the prototype of their class and far waway from the prototypes of otehr classes. They also outline an extension to
+          sample to be close to the prototype of their class and far away from the prototypes of other classes. They also outline an extension to
           multiple prototype supervised constrastive (MPSC) loss. 
 
           The experimentation included abalative studies which confirmed their advantage over two staged learning and showed top results on two 

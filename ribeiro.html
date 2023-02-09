@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <meta charset="utf-8" />
+     <title>"Why Should I Trust You?" Explaining the Predictions of Any Classifier by Ribeiro et al.</title>
+</head>
+<body>
+     <h1>Reference</h1>
+     <h2>Title</h2>
+     <p>"Why Should I Trust You?" Explaining the Predictions of Any Classifier</p>
+     <h2>Authors</h2>
+     <h2>Year</h2>
+     <p>2016</p>
+     <h2>Venue</h2>
+     <p>KDD</p>
+     <h2>Paper Numbers</h2>
+     <p>1-10</p>
+     <h1>Paper Link</h1>
+     <a href="https://arxiv.org/pdf/1602.04938.pdf">"Why Should I Trust You?" Explaining the Predictions of Any Classifier</a>
+     <h1>Summary</h1>
+     <p>
+          They outline solutions for "trusting a prediction" and "trusting a model". Local Interpretable Model-agnostic Explanations (LIME) is introduced
+          to identify an interpretable model over the interpretable representation that is locally faithful to the classifier. Interpretable explanations need
+          to be understandable to humans. They use a binary vector as their interpretable representation for a collection of real number original representation.
+     </p>
+     <p>
+          The model-agnostic part means they make no assumptions about the model. To learn the local behavior around a point, they perturb the interpretable representation
+          and then recover the original representation of the perturbed result and it's f(z) label. They use the classic locally weighted square mean loss and weight it by
+          the distance the perturbed sample is from the original using an exponential kernel distance function. They provide two examples: one with text and one with images.
+     </p>
+     <p>
+          For "trusting a model", they must look more at a global view by explaining a set of individual instances. Care is taken with defining their pick algorithm as
+          a person's time and patience are taken into account. With a set of instances X, |X| = n, they construct an n x d' explanation matrix W that denotes the local
+          importance of the interpretable components of each instance. To establish global importance I, they want the features that are present in many instances to have higher
+          importance, so I_j = sqrt(sum{i=1}{n}{W_ij}). They also want don't want to select instances with similar explanations since they want to avoid redundancy. The pick
+          equation they finish the section with is NP-hard. They instead introduce submodular pick with a greedy algorithm that iteratively adds the instance with the highest
+          marginal gain to the solution.
+     </p>
+     <p>
+          They run an experiment to see if explanations are faithful to the model by pre-selecting "gold" set of features that the model considers important, generate explanations,
+          and then testing recall on those "gold" features. They show greedy approach is comparable to parzen on logisitic regreession but much worse on decision trees. LIME is consistently better.
+     </p>
+     <p>
+          LIME also dominates in their experiment on trusting a single prediction. LIME is better than greedy in their experiment about trusting a model. LIME with submodular pick outperforms all others.
+     </p>
+     <p>
+          They also perform experiments with people including "Can users select the best classifier?", "Can non-experts improve a classifier?", and "Do explanations lead to insights?". They show 
+          submodular pick makes a big difference for user's ability to select the best classifier compared to random pick while LIME always outperforms greedy in the first case. In the second, they show
+          multiple rounds of improvement in model performance after user interaction. The high agreement between their tests in the second case show users are converging to similar correct models.
+          In the third case, they showed how explaining individual predictions offers insights into classifiers and when not to trust them and why.
+     </p>
+</body>
+</html>
