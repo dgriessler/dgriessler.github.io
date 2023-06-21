@@ -42,16 +42,17 @@
      </p>
      <p>
           The NN for predicting SEP occurence was a multilayer perceptron NN with a single output sigmoid unit. Feature importance was calculated using matrix
-          multiplication with matrices formed from the weights. Feature importance is quantfied then in relation to other features. Missing data was replaced 
-          using oversampling which duplicates the minority cases of a rare SEP event occuring until it's a better ratio with the majority cases of no SEP event
-          occuring. Evaluation was done through a confusion matrix (True Negative, False Negative, False Positive, True Positive). From there, recall = TP/(TP + FN),
+          multiplication with matrices formed from the weights. Feature importance is quantfied then in relation to other features. The issue of imbalanced data
+          was resolved using oversampling which duplicates the minority cases of a rare SEP event occuring until it's a better ratio with the majority cases of no SEP event
+          occurring. Evaluation was done through a confusion matrix (True Negative, False Negative, False Positive, True Positive). From there, recall = TP/(TP + FN),
           FPR = FP/(FP + TN), precision = TP/(TP + FP), and PFA = FP/(TP+FP) can be calculated as can TSS = TP/(TP+FN) - FP/(FP+TN) and F1 = (2*precision*recall) / (precision + recall).
-          TSS turned out to not be a very useful measurement but F1 was much more valuable. In addition, adding more features lead to higher F12 score. The threshold
+          TSS turned out to not be a very useful measurement but F1 was much more valuable. In addition, adding more features lead to higher F1 score. The threshold
           for the output sigmoid unit was varied and the best threshold was 0.962. All features were of somewhat importance when using their formula for calculating
           feature importance with none magnitudes better than the others. 
      </p>
      <p>
-          Predicting intensity does not use CMEs but predicts a continuous value based on continuous past values. The prediction is made 30 minutes or 1 hour from 
+          Predicting intensity does not use CMEs but predicts a continuous value based on continuous past and current eelctron and proton flux values.
+          The prediction is made 30 minutes or 1 hour from
           the current time. Electron and proton intensities are used as features with additional phases added to the input and later x-ray related features added in.
           A baseline is established using a single NN on the whole dataset. The imbalance between background noise and SEP events was resolved using multiple models.
           One multiple model system was based on models based on intensity with a high, medium, and low intensity model selected based on thresholds. The other was

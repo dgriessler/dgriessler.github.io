@@ -21,7 +21,7 @@
      <a href="https://cs.fit.edu/~pkc/theses/tarsoly21.pdf">Forecasting SEP Events based on Merged CME Catalogs using Machine Learning</a>
      <h1>Summary</h1>
      <p>An SEP event occurs when the flux of >10 MeV protons is greater than 10 proton flux units (pfus). SEPs are driven by CMEs (Coronal Mass Ejections.
-     The problem addressed is to forecase the occurence of SEP events using CME measurements. The DONKI dataset is combined with the CDAW CME dataset. 
+     The problem addressed is to forecasting the occurence of SEP events using CME measurements. The DONKI dataset is combined with the CDAW CME dataset. 
      CDAW measurements are earth based while DONKI measurements are Suncentric instrument based. There are some challenges to combining the sets like 
      the limited 7 year span of the DONKI set and duplicate entries can exist between the datasets. Matches are made by resolving conflicts with many CDAW
      candidates to one DONKI, multiple DONKI entires to one CDAW, no CDAW, and a one-to-one match. Duplicates are also removed and the time span is limited
@@ -30,7 +30,7 @@
      to Torres work by increasing the quality of data and utilizing additional ML techniques. The enhanced data comes from the CDAW/DONKI combo dataset produced in the last paragraph. Feature 
      and representation learning are included as addiitonal ML techniques. The NN is a multi-layer perceptron NN using one hidden layer like Torres. Unlike Torres, Tarsoly uses 2 output units 
      semantically equivalent to Torres but allows for additional techniques to improve performance. 3 groups of features are made including DONKI features, selected features from derived and external
-     data, and remaining CDAW features. Data-based imbalanced data is handled via oversampling. Model-based imbalanced data was hanlded using a 2 stage training via classifier re-training (cRT). The
+     data, and remaining CDAW features. Data-based imbalanced data is handled via oversampling. Model-based imbalanced data was handled using a 2 stage training via classifier re-training (cRT). The
      first stage is to learn better features from the hidden units and the second stage is to freeze the hidden and input layers and relearn the hidden to output weights. The second stage is then focused
      on learning the classifer. Better features were learned using an autoencoder taking input to some new representation and then back again.</p>
      <p>The dataset was partitioned chronically and randomly for two different schemes. A confusion matrix was used again for evaluation including calcuations of precision, recall, F1, and TSS along with

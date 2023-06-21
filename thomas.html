@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <meta charset="utf-8" />
+     <title>A Machine Learning Approach to Forecasting SEP Intensity and Times based on CME and other Solar Activities by Peter John Thomas</title>
+</head>
+<body>
+     <h1>Reference</h1>
+     <h2>Title</h2>
+     <p>A Machine Learning Approach to Forecasting SEP Intensity and Times based on CME and other Solar Activities by Peter John Thomas</p>
+     <h2>Authors</h2>
+     <p>Peter John Thomas</p>
+     <h2>Year</h2>
+     <p>2022</p>
+     <h2>Venue</h2>
+     <p>Florida Tech</p>
+     <h2>Paper Numbers</h2>
+     <p>1-142</p>
+     <h1>Paper Link</h1>
+     <a href="https://cs.fit.edu/~pkc/theses/thomas22.pdf">A Machine Learning Approach to Forecasting SEP Intensity and Times based on CME and other Solar Activities</a>
+     <h1>Summary</h1>
+     <p>
+          Thomas has two main contributions. Thomas offers an improved dataset for CME and other solar weather features to corresponding SEP intensity and threshold
+          and peak time, and several neural network architectures to predict SEP peak intensity, threshold time and peak time.
+     </p>
+     <p>
+          The first problem was predicting the peak intensity of 10 MeV proton events using CME characteristics. Baseline features from the CME and DONKI catalog
+          were combined with derived features to form 20 features. Approaches included neural networks with oversampling, rRT with Autoencoder, and adaptive calibration.
+          Evaluation metrics included mean absolute error (MAE), pearson correlation (PCC), F1, TSS, and HSS. Data was paritioned randomly and chronologically. Random
+          paritiooning performed better than chronological partitioning. The best approach was rRT+AE for MAE and TSS with oversampling rate of 40-0%, but the best
+          F1-score was achieved using adaptive-calibration and oversampling of 40-30% and 50-0%. However, when maximizing true detections, oversampling of 20-20%
+          with rRT+AE model is best with a tradeoff of the number of false-negatives.
+     </p>
+     <p>
+          The second problem was predicting the threshold and peak time. The features used in the first problem were reused in addition to a feature: connection angle.
+          Approaches included random-oversampling, rRT+AE, and Adaptive Calibration. The same MAE and PCC metrics were used. To compare threshold time and peak time,
+          Thomas used PCC and ratio of MAE with standard deviation of the observed value. The rRT+AE consistently had the best results. 
+     </p>
+</body>
+</html>
